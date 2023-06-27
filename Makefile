@@ -1,0 +1,12 @@
+RMINIONS_USER=kaybenleroll
+RMINIONS_NAME=rminions
+RMINIONS_TAG=0.0.1
+
+RMINIONS_IMAGE_TAG_BASE=${RMINIONS_USER}/${RMINIONS_NAME}
+RMINIONS_IMAGE_TAG=${RMINIONS_IMAGE_TAG_BASE}:${RMINIONS_TAG}
+
+docker-build-rminions-image:
+	docker build -f Dockerfile -t ${RMINIONS_IMAGE_TAG} .
+	docker tag ${RMINIONS_IMAGE_TAG} ${RMINIONS_IMAGE_TAG_BASE}:latest
+
+

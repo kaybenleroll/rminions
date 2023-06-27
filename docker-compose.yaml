@@ -1,13 +1,13 @@
 version: '3'
 services:
   worker:
-    image: rminion:latest
+    image: kaybenleroll/rminions:latest
     environment:
       - REDIS=redis
     depends_on:
       - redis
 
   redis:
-    image: redis:latest
+    image: redis:7.0.11-alpine3.18
     ports:
       - "6379:6379"
